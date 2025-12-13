@@ -24,6 +24,25 @@ class LinkedList:
             current=current.next
         print("None")
 
+    def delete(self, key):
+        # handle empty list
+        if not self.head:
+            return False
+        # handle deleting head
+        temp=self.head
+        if temp.data == key:
+            self.head = temp.next
+            return True
+        # walk and check the next node (no prev variable needed)
+        current = self.head
+        while current.next:
+            t=current.next
+            if t.data == key:
+                current.next = t.next
+                return True
+            current = current.next
+        return False
+    
     def search(self,key):
         current=self.head
         while current:
@@ -31,7 +50,6 @@ class LinkedList:
                 return True
             current=current.next
         return False
-    
 l=LinkedList()
 l.append(10)
 l.append(30)
