@@ -1,4 +1,3 @@
-# Binary Tree Node class
 
 class Node:
     def __init__(self, name, bonus):
@@ -8,7 +7,6 @@ class Node:
         self.right = None
 
 
-# Post-order Traversal: Left -> Right -> Root
 def post_order(root):
     if root:
         post_order(root.left)
@@ -16,7 +14,6 @@ def post_order(root):
         print("Employee:", root.name, "| Bonus:", root.bonus)
 
 
-# Creating the Binary Tree
 ceo = Node("CEO", 10000)
 manager1 = Node("Manager A", 7000)
 manager2 = Node("Manager B", 7000)
@@ -28,5 +25,4 @@ ceo.right = manager2
 manager1.left = sub1
 manager1.right = sub2
 
-# Traversal
 post_order(ceo)
